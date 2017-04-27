@@ -11,6 +11,11 @@ import XCTest
 
 class WadTests: XCTestCase {
     
+    //MARK: - Properties
+    // Se declara un objeto Wad vacío y un objeto Wad con un amount de 42 para la currency USD
+    var emptyWad : Wad = Wad()
+    var singleBillWad = Wad(amount: 42, currency: "USD")
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -35,6 +40,10 @@ class WadTests: XCTestCase {
     
     // Test que valida que se puede crear una clase Euro
     func testCanCreateWad() {
-        XCTAssertNotNil(Wad())
+        XCTAssertNotNil(emptyWad)
+        XCTAssertNotNil(singleBillWad)
+        
+        XCTAssertEqual(emptyWad.billCount , 0)
+        XCTAssertEqual(singleBillWad.billCount , 1)
     }
 }

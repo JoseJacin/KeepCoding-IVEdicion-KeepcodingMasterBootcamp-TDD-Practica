@@ -15,13 +15,19 @@ typealias Bills = [Bill]
 struct Wad {
     //MARK: - Properties
     var _bills = Bills()
+    
+    var billCount : Int{
+        get{
+            return _bills.count
+        }
+    }
 }
 
 //MARK: - -- Extensions --
 extension Wad : Money {
     //MARK: - Initialization
     init(amount: Int, currency: Currency) {
-    
+        _bills.append(Bill(amount: amount, currency: currency))
     }
     
     //MARK: - Functions

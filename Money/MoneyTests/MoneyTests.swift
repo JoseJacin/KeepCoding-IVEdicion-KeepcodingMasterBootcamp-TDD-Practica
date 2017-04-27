@@ -29,9 +29,6 @@ class BillTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-        
-        //broker = Broker()
-        //broker.addRate(from: "EUR", to: "USD", rate: 2)
     }
     
     func testExample() {
@@ -46,7 +43,7 @@ class BillTests: XCTestCase {
         }
     }
     
-    // Test que valida que se puede crear una clase Euro
+    // Test que valida que se puede crear una clase Bill
     func testCanCreateMoney() {
         XCTAssertNotNil(Bill())
     }
@@ -57,7 +54,7 @@ class BillTests: XCTestCase {
         XCTAssertEqual(ten._amount, 10)
     }
     
-    // Test que comprueba si un objeto Euro es igual a otro objeto Euro
+    // Test que comprueba si un objeto Bill es igual a otro objeto Bill
     func testEquality(){
         XCTAssertEqual(otherFive, otherFive)
         XCTAssertEqual(five, otherFive)
@@ -65,13 +62,13 @@ class BillTests: XCTestCase {
         XCTAssertNotEqual(five, ten)
     }
     
-    // Test que comprueba si un objeto Euro es igual a otro objeto Euro teniendo en cuenta el hashValue
+    // Test que comprueba si un objeto Bill es igual a otro objeto Bill teniendo en cuenta el hashValue
     func testThatObjectWithEqualHashAreEqual(){
         XCTAssertEqual(five.hashValue, otherFive.hashValue)
         XCTAssertNotEqual(ten.hashValue, otherFive.hashValue)
     }
     
-    // Test que comprueba si la suma de dos objetos Euro es correcta
+    // Test que comprueba si la suma de dos objetos Bill es correcta
     func testSimpleAddition(){
         XCTAssertEqual(ten, five.plus(otherFive))
         XCTAssertNotEqual(ten, ten.plus(otherFive))
