@@ -1,5 +1,5 @@
 //
-//  Euro.swift
+//  Money.swift
 //  Money
 //
 //  Created by Jose Sanchez Rodriguez on 27/4/17.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-//MARK: -- Struct Euro --
-struct Euro {
+//MARK: -- Struct Money --
+struct Money {
     //MARK: - Properties
     let _amount : Int
     
@@ -25,16 +25,16 @@ struct Euro {
 }
 
 //MARK: - -- Extensions --
-extension Euro {
+extension Money {
     //MARK: Functions
     // Función que multiplica amount por el número pasado por parámetro
-    func times(_ n: Int) -> Euro {
-        return Euro(amount: _amount * n)
+    func times(_ n: Int) -> Money {
+        return Money(amount: _amount * n)
     }
     
-    // Protocolo plus. Protocolo que permite la suma de dos objetos Euro
-    func plus(_ add: Euro) -> Euro {
-        return Euro(amount: _amount + add._amount)
+    // Protocolo plus. Protocolo que permite la suma de dos objetos Money
+    func plus(_ add: Money) -> Money {
+        return Money(amount: _amount + add._amount)
     }
 }
 
@@ -45,16 +45,16 @@ extension Euro {
 
 //MARK: - -- Protocols --
 //MARK: Equatable
-// Protocolo Equatable. Protocolo que compara _amount de dos objetos Euro retorna si son iguales.
-extension Euro : Equatable {
-    public static func == (lhs: Euro, rhs: Euro) -> Bool {
+// Protocolo Equatable. Protocolo que compara _amount de dos objetos Money retorna si son iguales.
+extension Money : Equatable {
+    public static func == (lhs: Money, rhs: Money) -> Bool {
         return lhs._amount == rhs._amount
     }
 }
 
 //MARK: Hashable
-// Protocolo Hashable. Protocolo que retorna el hashValue de _amount del objeto Euro
-extension Euro : Hashable {
+// Protocolo Hashable. Protocolo que retorna el hashValue de _amount del objeto Money
+extension Money : Hashable {
     public var hashValue: Int {
         get {
             return _amount.hashValue

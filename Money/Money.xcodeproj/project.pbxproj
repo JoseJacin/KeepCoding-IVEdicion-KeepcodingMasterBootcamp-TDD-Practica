@@ -13,7 +13,7 @@
 		DF73A1681EB614C600AD6112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF73A1671EB614C600AD6112 /* Assets.xcassets */; };
 		DF73A16B1EB614C600AD6112 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF73A1691EB614C600AD6112 /* LaunchScreen.storyboard */; };
 		DF73A1761EB614C600AD6112 /* MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF73A1751EB614C600AD6112 /* MoneyTests.swift */; };
-		DFBFCEAD1EB225A60098B3A0 /* Euro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBFCEAC1EB225A60098B3A0 /* Euro.swift */; };
+		DFBFCEAD1EB225A60098B3A0 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBFCEAC1EB225A60098B3A0 /* Money.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		DF73A1711EB614C600AD6112 /* MoneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF73A1751EB614C600AD6112 /* MoneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyTests.swift; sourceTree = "<group>"; };
 		DF73A1771EB614C600AD6112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DFBFCEAC1EB225A60098B3A0 /* Euro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Euro.swift; sourceTree = "<group>"; };
+		DFBFCEAC1EB225A60098B3A0 /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,7 @@
 		DFBFCEAB1EB2259A0098B3A0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DFBFCEAC1EB225A60098B3A0 /* Euro.swift */,
+				DFBFCEAC1EB225A60098B3A0 /* Money.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -214,7 +214,7 @@
 			files = (
 				DF73A1631EB614C600AD6112 /* ViewController.swift in Sources */,
 				DF73A1611EB614C600AD6112 /* AppDelegate.swift in Sources */,
-				DFBFCEAD1EB225A60098B3A0 /* Euro.swift in Sources */,
+				DFBFCEAD1EB225A60098B3A0 /* Money.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
