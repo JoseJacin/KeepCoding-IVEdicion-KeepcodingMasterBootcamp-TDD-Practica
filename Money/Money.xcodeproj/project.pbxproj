@@ -15,6 +15,8 @@
 		DF73A1761EB614C600AD6112 /* MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF73A1751EB614C600AD6112 /* MoneyTests.swift */; };
 		DFBFCEAD1EB225A60098B3A0 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBFCEAC1EB225A60098B3A0 /* Bill.swift */; };
 		DFBFCEAF1EB262670098B3A0 /* Broker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBFCEAE1EB262670098B3A0 /* Broker.swift */; };
+		DFBFCEB41EB26F8E0098B3A0 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBFCEB31EB26F8E0098B3A0 /* Money.swift */; };
+		DFBFCEB61EB270180098B3A0 /* Wad.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBFCEB51EB270180098B3A0 /* Wad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		DF73A1771EB614C600AD6112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFBFCEAC1EB225A60098B3A0 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		DFBFCEAE1EB262670098B3A0 /* Broker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broker.swift; sourceTree = "<group>"; };
+		DFBFCEB31EB26F8E0098B3A0 /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		DFBFCEB51EB270180098B3A0 /* Wad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		DF73A15F1EB614C600AD6112 /* Money */ = {
 			isa = PBXGroup;
 			children = (
+				DFBFCEB21EB26F710098B3A0 /* Protocols */,
 				DFBFCEAB1EB2259A0098B3A0 /* Models */,
 				DF73A1601EB614C600AD6112 /* AppDelegate.swift */,
 				DF73A1621EB614C600AD6112 /* ViewController.swift */,
@@ -106,8 +111,17 @@
 			children = (
 				DFBFCEAC1EB225A60098B3A0 /* Bill.swift */,
 				DFBFCEAE1EB262670098B3A0 /* Broker.swift */,
+				DFBFCEB51EB270180098B3A0 /* Wad.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		DFBFCEB21EB26F710098B3A0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DFBFCEB31EB26F8E0098B3A0 /* Money.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +229,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFBFCEB61EB270180098B3A0 /* Wad.swift in Sources */,
 				DFBFCEAF1EB262670098B3A0 /* Broker.swift in Sources */,
+				DFBFCEB41EB26F8E0098B3A0 /* Money.swift in Sources */,
 				DF73A1631EB614C600AD6112 /* ViewController.swift in Sources */,
 				DF73A1611EB614C600AD6112 /* AppDelegate.swift in Sources */,
 				DFBFCEAD1EB225A60098B3A0 /* Bill.swift in Sources */,
