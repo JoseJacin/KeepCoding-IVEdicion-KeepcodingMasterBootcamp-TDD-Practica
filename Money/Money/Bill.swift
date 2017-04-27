@@ -44,7 +44,7 @@ extension Bill {
     }
     
     // Función que realiza la conversión aplicando el factor de corrección recuperado de Broker
-    func reduced(to: Currency, broker: Broker) throws ->Bill{
+    func reduced(to: Currency, broker: Rater) throws -> Bill {
         let rate = try! broker.rate(from: _currency, to: to)
         return Bill(amount: _amount * rate , currency: to)
     }
@@ -55,7 +55,7 @@ extension Bill {
 // Según lo que se indica, "todo objeto que implementa Equatable debe de implementar Hashable".
 // Nota Personal: Según lo indicado por los profes de Keepcoding, implementar Hashable cuando se implementa Equatable es lo que se llama "implementación de un protocolo informal", es decir, es algo que "sabes" que debes hacer, pero ni el compilador ni nadie te impide no hacerlo
 
-//MARK: - -- Protocols --
+//MARK: - -- Protocols Extensions --
 //MARK: Equatable
 // Protocolo Equatable. Protocolo que compara _amount de dos objetos Bill retorna si son iguales.
 extension Bill : Equatable {
@@ -71,5 +71,13 @@ extension Bill : Hashable {
         get {
             return _amount.hashValue
         }
+    }
+}
+
+//MARK: CustomStringConvertible
+// Protocolo CustomStringConvertible. Protocolo que retorna la representación textual de la instancia
+extension Bill: CustomStringConvertible {
+    var description: String {
+        return "\(_amount) \(_currency)"
     }
 }

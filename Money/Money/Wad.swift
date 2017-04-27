@@ -37,12 +37,54 @@ extension Wad : Money {
     }
     
     // Función que permite la suma de dos objetos Bill
-    func plus(_ addend: Wad) -> Wad {
-        return self
+    func plus(_ add: Wad) -> Wad {
+        return Wad(_bills: _bills + add._bills)
     }
     
     // Función que retorna el ratio de conversión teniendo en cuenta los parámetros de las currency llegadas por parámetro
-    func reduced(to: Currency, broker: Broker) throws -> Wad {
-        return self
+    func reduced(to: Currency, broker: Rater) throws -> Bill {
+        var tally = Bill(amount: 0, currency: to)
+        
+        for each in _bills {
+            tally = try tally.reduced(to: to, broker: broker).plus(try each.reduced(to: to, broker: broker))
+        }
+        
+        return tally
+    }
+}
+
+//MARK: - -- Protocols Extensions --
+//MARK: Equatable
+// Protocolo Equatable. Protocolo que compara dos objetos Wad y retorna si son iguales.
+extension Wad : Equatable{
+    public static func ==(lhs: Wad, rhs: Wad) -> Bool{
+        
+        // Antes de poder comparar se tiene que normalizar la currency
+        let broker = UnityBroker()
+        
+        let leftBill = try! lhs.reduced(to: "USD", broker: broker)
+        let rightBill = try! rhs.reduced(to: "USD", broker: broker)
+        
+        return leftBill == rightBill
+    }
+}
+
+//MARK: CustomStringConvertible
+// Protocolo CustomStringConvertible. Protocolo que retorna la representación textual de la instancia
+extension Wad : CustomStringConvertible {
+    public var description: String {
+        get {
+            if billCount == 0 {
+                return "Empty"
+            } else if billCount == 1 {
+                return (_bills.first?.description)!
+            } else {
+                var total = ""
+                for bill in _bills {
+                    total = total + " + \(bill)"
+                }
+                return total
+            }
+        }
     }
 }

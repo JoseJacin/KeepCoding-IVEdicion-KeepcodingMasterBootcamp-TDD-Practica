@@ -20,5 +20,5 @@ protocol Money {
     func plus(_ add: Self) -> Self
     
     // Protocolo que realiza la conversión aplicando el factor de corrección recuperado de Broker
-    func reduced(to: Currency, broker: Broker) throws -> Self
+    func reduced(to: Currency, broker: Rater) throws -> Bill
 }
