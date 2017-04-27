@@ -56,4 +56,10 @@ class MoneyTests: XCTestCase {
         
         XCTAssertNotEqual(five, ten)
     }
+    
+    // Test que comprueba si un objeto Euro es igual a otro objeto Euro teniendo en cuenta el hashValue
+    func testThatObjectWithEqualHashAreEqual(){
+        XCTAssertEqual(five.hashValue, otherFive.hashValue)
+        XCTAssertNotEqual(ten.hashValue, otherFive.hashValue)
+    }
 }
