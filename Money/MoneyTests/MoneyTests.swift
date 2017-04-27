@@ -33,4 +33,8 @@ class MoneyTests: XCTestCase {
         }
     }
     
+    // Test que valida que se puede crear una clase Euro
+    func testCanCreateEuro() {
+        XCTAssertNotNil(Euro())
+    }
 }
