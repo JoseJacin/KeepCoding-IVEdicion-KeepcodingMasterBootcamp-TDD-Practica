@@ -1,5 +1,5 @@
 //
-//  Money.swift
+//  Bill.swift
 //  Money
 //
 //  Created by Jose Sanchez Rodriguez on 27/4/17.
@@ -11,8 +11,8 @@ import Foundation
 //MARK: - Typealiases
 typealias Currency = String
 
-//MARK: - -- Struct Money --
-struct Money {
+//MARK: - -- Struct Bill --
+struct Bill {
     //MARK: - Properties
     let _amount : Int
     let _currency : Currency
@@ -31,22 +31,22 @@ struct Money {
 }
 
 //MARK: - -- Extensions --
-extension Money {
+extension Bill {
     //MARK: Functions
     // Función que multiplica amount por el número pasado por parámetro
-    func times(_ n: Int) -> Money {
-        return Money(amount: _amount * n)
+    func times(_ n: Int) -> Bill {
+        return Bill(amount: _amount * n)
     }
     
-    // Función que permite la suma de dos objetos Money
-    func plus(_ add: Money) -> Money {
-        return Money(amount: _amount + add._amount)
+    // Función que permite la suma de dos objetos Bill
+    func plus(_ add: Bill) -> Bill {
+        return Bill(amount: _amount + add._amount)
     }
     
     // Función que realiza la conversión aplicando el factor de corrección recuperado de Broker
-    func reduced(to: Currency, broker: Broker) throws ->Money{
+    func reduced(to: Currency, broker: Broker) throws ->Bill{
         let rate = try! broker.rate(from: _currency, to: to)
-        return Money(amount: _amount * rate , currency: to)
+        return Bill(amount: _amount * rate , currency: to)
     }
 }
 
@@ -57,16 +57,16 @@ extension Money {
 
 //MARK: - -- Protocols --
 //MARK: Equatable
-// Protocolo Equatable. Protocolo que compara _amount de dos objetos Money retorna si son iguales.
-extension Money : Equatable {
-    public static func == (lhs: Money, rhs: Money) -> Bool {
+// Protocolo Equatable. Protocolo que compara _amount de dos objetos Bill retorna si son iguales.
+extension Bill : Equatable {
+    public static func == (lhs: Bill, rhs: Bill) -> Bool {
         return lhs._amount == rhs._amount
     }
 }
 
 //MARK: Hashable
-// Protocolo Hashable. Protocolo que retorna el hashValue de _amount del objeto Money
-extension Money : Hashable {
+// Protocolo Hashable. Protocolo que retorna el hashValue de _amount del objeto Bill
+extension Bill : Hashable {
     public var hashValue: Int {
         get {
             return _amount.hashValue

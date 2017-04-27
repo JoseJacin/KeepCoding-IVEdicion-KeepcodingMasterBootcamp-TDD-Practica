@@ -1,5 +1,5 @@
 //
-//  MoneyTests.swift
+//  BillTests.swift
 //  MoneyTests
 //
 //  Created by Jose Sanchez Rodriguez on 27/4/17.
@@ -9,12 +9,12 @@
 import XCTest
 @testable import Money
 
-class MoneyTests: XCTestCase {
+class BillTests: XCTestCase {
     
     //MARK: - Properties
-    let five = Money(amount: 5)
-    let otherFive = Money(amount: 5)
-    let ten = Money(amount: 10)
+    let five = Bill(amount: 5)
+    let otherFive = Bill(amount: 5)
+    let ten = Bill(amount: 10)
     var broker : Broker!
     
     override func setUp() {
@@ -48,7 +48,7 @@ class MoneyTests: XCTestCase {
     
     // Test que valida que se puede crear una clase Euro
     func testCanCreateEuro() {
-        XCTAssertNotNil(Money())
+        XCTAssertNotNil(Bill())
     }
     
     // Test que valida una multiplicación simple
