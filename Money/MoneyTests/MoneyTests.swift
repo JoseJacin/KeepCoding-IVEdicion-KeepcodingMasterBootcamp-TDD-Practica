@@ -13,6 +13,8 @@ class MoneyTests: XCTestCase {
     
     //MARK: - Properties
     let five = Euro(amount: 5)
+    let otherFive = Euro(amount: 5)
+    let ten = Euro(amount: 10)
     
     override func setUp() {
         super.setUp()
@@ -46,5 +48,12 @@ class MoneyTests: XCTestCase {
         let ten = five.times(2)
         XCTAssertEqual(ten._amount, 10)
     }
-
+    
+    // Test que comprueba si un objeto Euro es igual a otro objeto Euro
+    func testEquality(){
+        XCTAssertEqual(otherFive, otherFive)
+        XCTAssertEqual(five, otherFive)
+        
+        XCTAssertNotEqual(five, ten)
+    }
 }
