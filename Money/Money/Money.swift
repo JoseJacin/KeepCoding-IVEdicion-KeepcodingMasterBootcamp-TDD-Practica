@@ -8,19 +8,25 @@
 
 import Foundation
 
-//MARK: -- Struct Money --
+//MARK: - Typealiases
+typealias Currency = String
+
+//MARK: - -- Struct Money --
 struct Money {
     //MARK: - Properties
     let _amount : Int
+    let _currency : Currency
     
     //MARK: - Initialization
-    init(amount: Int) {
+    init(amount: Int, currency: Currency = "EUR") {
         _amount = amount
+        _currency = currency
     }
     
     //Initialization
     init() {
         _amount = 0
+        _currency = "EUR"
     }
 }
 
