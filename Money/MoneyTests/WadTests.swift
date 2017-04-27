@@ -70,7 +70,13 @@ class WadTests: XCTestCase {
     }
     
     // Test que valida que si suma de dos cantidades de la misma moneda es correcta
-    func testSimpleAddition(){
+    func testSimpleAddition() {
         XCTAssertEqual(singleBillWad.plus(Wad(amount: 8, currency: "USD")), Wad(amount: 50, currency: "USD"))
+    }
+    
+    // Test que valida una multiplicación simple
+    func testSimpleMultiplication() {
+        let eightyFour = singleBillWad.times(2)
+        XCTAssertEqual(eightyFour, Wad(amount: 84, currency: "USD"))
     }
 }

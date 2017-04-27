@@ -33,7 +33,14 @@ extension Wad : Money {
     //MARK: - Functions
     // Función que multiplica amount por el número pasado por parámetro
     func times(_ n:Int) -> Wad {
-        return self
+        var total = Bills()
+        
+        // Primero se implementa con un bucle for
+        for each in _bills {
+            let bill = Bill(amount: each._amount * n, currency: each._currency)
+            total.append(bill)
+        }
+        return Wad(_bills: total)
     }
     
     // Función que permite la suma de dos objetos Bill
