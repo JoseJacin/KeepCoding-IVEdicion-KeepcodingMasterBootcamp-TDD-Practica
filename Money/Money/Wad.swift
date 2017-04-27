@@ -9,6 +9,6 @@
 import Foundation
 
 //MARK: - -- Struct Wad --
-struct Wad: Money {
+struct Wad {
 
 }
