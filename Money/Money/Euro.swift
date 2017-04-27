@@ -10,5 +10,22 @@ import Foundation
 
 // Estructura Euro
 struct Euro {
+    //MARK: - Properties
+    let _amount : Int
     
+    //MARK: - Initialization
+    init(amount: Int) {
+        _amount = amount
+    }
+    
+    //Inicializador 
+    init() {
+        _amount = 0
+    }
+    
+    //MARK: - Functions
+    // Función que multiplica amount por el número pasado por parámetro
+    func times(_ n: Int) -> Euro {
+        return Euro(amount: _amount * n)
+    }
 }

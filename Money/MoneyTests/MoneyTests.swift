@@ -11,6 +11,9 @@ import XCTest
 
 class MoneyTests: XCTestCase {
     
+    //MARK: - Properties
+    let five = Euro(amount: 5)
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -37,4 +40,11 @@ class MoneyTests: XCTestCase {
     func testCanCreateEuro() {
         XCTAssertNotNil(Euro())
     }
+    
+    // Test que valida una multiplicación simple
+    func testSimpleMultiplication(){
+        let ten = five.times(2)
+        XCTAssertEqual(ten._amount, 10)
+    }
+
 }
