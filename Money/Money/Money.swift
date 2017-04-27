@@ -38,9 +38,15 @@ extension Money {
         return Money(amount: _amount * n)
     }
     
-    // Protocolo plus. Protocolo que permite la suma de dos objetos Money
+    // Función que permite la suma de dos objetos Money
     func plus(_ add: Money) -> Money {
         return Money(amount: _amount + add._amount)
+    }
+    
+    // Función que realiza la conversión aplicando el factor de corrección recuperado de Broker
+    func reduced(to: Currency, broker: Broker) throws ->Money{
+        let rate = try! broker.rate(from: _currency, to: to)
+        return Money(amount: _amount * rate , currency: to)
     }
 }
 

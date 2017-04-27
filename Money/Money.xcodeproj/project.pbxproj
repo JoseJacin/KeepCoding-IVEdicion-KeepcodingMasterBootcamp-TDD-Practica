@@ -14,6 +14,7 @@
 		DF73A16B1EB614C600AD6112 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF73A1691EB614C600AD6112 /* LaunchScreen.storyboard */; };
 		DF73A1761EB614C600AD6112 /* MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF73A1751EB614C600AD6112 /* MoneyTests.swift */; };
 		DFBFCEAD1EB225A60098B3A0 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBFCEAC1EB225A60098B3A0 /* Money.swift */; };
+		DFBFCEAF1EB262670098B3A0 /* Broker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBFCEAE1EB262670098B3A0 /* Broker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		DF73A1751EB614C600AD6112 /* MoneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyTests.swift; sourceTree = "<group>"; };
 		DF73A1771EB614C600AD6112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFBFCEAC1EB225A60098B3A0 /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		DFBFCEAE1EB262670098B3A0 /* Broker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				DFBFCEAC1EB225A60098B3A0 /* Money.swift */,
+				DFBFCEAE1EB262670098B3A0 /* Broker.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFBFCEAF1EB262670098B3A0 /* Broker.swift in Sources */,
 				DF73A1631EB614C600AD6112 /* ViewController.swift in Sources */,
 				DF73A1611EB614C600AD6112 /* AppDelegate.swift in Sources */,
 				DFBFCEAD1EB225A60098B3A0 /* Money.swift in Sources */,

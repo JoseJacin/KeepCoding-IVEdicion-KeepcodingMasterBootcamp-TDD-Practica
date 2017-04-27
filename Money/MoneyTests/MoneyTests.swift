@@ -15,15 +15,23 @@ class MoneyTests: XCTestCase {
     let five = Money(amount: 5)
     let otherFive = Money(amount: 5)
     let ten = Money(amount: 10)
+    var broker : Broker!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        // Se declara el objeto Broker y se añade el factor de conversión de EUR a USD con un ratio de 2
+        broker = Broker()
+        broker.addRate(from: "EUR", to: "USD", rate: 2)
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+        
+        //broker = Broker()
+        //broker.addRate(from: "EUR", to: "USD", rate: 2)
     }
     
     func testExample() {
@@ -63,9 +71,14 @@ class MoneyTests: XCTestCase {
         XCTAssertNotEqual(ten.hashValue, otherFive.hashValue)
     }
     
-    // Test que compryeba si la suma de dos objetos Euro es correcta
+    // Test que comprueba si la suma de dos objetos Euro es correcta
     func testSimpleAddition(){
         XCTAssertEqual(ten, five.plus(otherFive))
         XCTAssertNotEqual(ten, ten.plus(otherFive))
+    }
+    
+    // Test que comprueba la reducción de una moneda
+    func testSimpleReduction(){
+        XCTAssertEqual(try! five.reduced(to: "EUR", broker: broker), five)
     }
 }
