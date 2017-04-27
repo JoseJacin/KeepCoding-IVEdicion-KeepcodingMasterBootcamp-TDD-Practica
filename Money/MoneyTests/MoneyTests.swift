@@ -62,4 +62,10 @@ class MoneyTests: XCTestCase {
         XCTAssertEqual(five.hashValue, otherFive.hashValue)
         XCTAssertNotEqual(ten.hashValue, otherFive.hashValue)
     }
+    
+    // Test que compryeba si la suma de dos objetos Euro es correcta
+    func testSimpleAddition(){
+        XCTAssertEqual(ten, five.plus(otherFive))
+        XCTAssertNotEqual(ten, ten.plus(otherFive))
+    }
 }
