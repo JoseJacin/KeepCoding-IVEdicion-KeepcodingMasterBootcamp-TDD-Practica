@@ -68,4 +68,9 @@ class WadTests: XCTestCase {
         XCTAssertEqual(fifty1, fifty3)
         XCTAssertEqual(fifty2, fifty3)
     }
+    
+    // Test que valida que si suma de dos cantidades de la misma moneda es correcta
+    func testSimpleAddition(){
+        XCTAssertEqual(singleBillWad.plus(Wad(amount: 8, currency: "USD")), Wad(amount: 50, currency: "USD"))
+    }
 }
