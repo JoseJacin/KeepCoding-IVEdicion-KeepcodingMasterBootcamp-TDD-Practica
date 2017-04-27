@@ -34,7 +34,7 @@ class WadTests: XCTestCase {
     }
     
     // Test que valida que se puede crear una clase Euro
-    func testCanCreateMoney() {
+    func testCanCreateWad() {
         XCTAssertNotNil(Wad())
     }
 }
